@@ -1,0 +1,31 @@
+.payment-row {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.payment-row .row-main {
+  flex: 1 1 11rem;
+}
+
+.payment-row .row-main p + p {
+  margin-top: 0.25rem;
+}
+
+.payment-row .row-actions {
+  align-self: center;
+}
+
+.split-preview {
+  padding: calc(var(--space) * 1.5);
+  border-radius: 0.75rem;
+  background: var(--brand-soft);
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.request-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}

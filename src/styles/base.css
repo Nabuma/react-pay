@@ -1,4 +1,5 @@
 @import "./reset.css";
+@import "./features.css";
 
 :root {
   --space: 0.5rem;
@@ -17,6 +18,8 @@
   --up-soft: #fee2e2;
   --down: #2563eb;
   --down-soft: #dbeafe;
+  --income: #15803d;
+  --income-soft: #dcfce7;
   --radius: 1.125rem;
   --shadow-card: 0 8px 24px rgb(20 34 57 / 4%), 0 1px 2px rgb(20 34 57 / 3%);
 
@@ -42,6 +45,8 @@
     --up-soft: #4c1d24;
     --down: #60a5fa;
     --down-soft: #1b3159;
+    --income: #4ade80;
+    --income-soft: #12382a;
     color-scheme: dark;
   }
 }

@@ -1,0 +1,96 @@
+.activity-search {
+  position: relative;
+  margin-bottom: calc(var(--space) * 2);
+}
+
+.activity-search svg {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--space) * 1.5);
+  color: var(--muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.activity-search .input {
+  padding-left: calc(var(--space) * 4.5);
+}
+
+.activity-grid {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.activity-summary {
+  padding: 0 var(--space);
+  font-size: 0.875rem;
+}
+
+.activity-month-total {
+  display: flex;
+  gap: calc(var(--space) * 1.5);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.amount-in {
+  color: var(--income);
+  font-weight: 700;
+}
+
+.activity-flow {
+  margin-bottom: calc(var(--space) * 2);
+}
+
+.activity-row .row-main h4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space);
+}
+
+.income-badge {
+  padding: 0.125rem calc(var(--space) * 1);
+  border-radius: 999px;
+  background: var(--income-soft);
+  color: var(--income);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.activity-row {
+  padding-inline: calc(var(--space) * 2);
+}
+
+.activity-row.is-income {
+  position: relative;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, var(--income-soft), transparent 70%);
+  box-shadow: inset 3px 0 0 var(--income);
+}
+
+.activity-row.is-income .amounts p:first-child {
+  color: var(--income);
+  font-weight: 750;
+}
+
+.activity-row .amounts {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.activity-row .amounts p:first-child {
+  font-weight: 650;
+  font-size: 0.875rem;
+}
+
+.activity-row .amounts .muted {
+  font-size: 0.8125rem;
+}
+
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 1.5);
+}

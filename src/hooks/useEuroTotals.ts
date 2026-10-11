@@ -23,5 +23,13 @@ export function useEuroTotals(accounts: readonly Account[], spendings: readonly 
     [spendings, rates, isReady, error]
   )
 
-  return { totalBalance, monthlySpendings, error, retry }
+  const transactions = useMemo(
+    () => monthlySpendings?.flatMap(month => [...month.transactions, ...month.received]) ?? null,
+    [monthlySpendings]
+  )
+
+  return useMemo(
+    () => ({ totalBalance, monthlySpendings, transactions, rates, isReady, error, retry }),
+    [totalBalance, monthlySpendings, transactions, rates, isReady, error, retry]
+  )
 }

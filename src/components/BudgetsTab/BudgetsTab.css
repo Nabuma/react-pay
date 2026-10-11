@@ -1,0 +1,31 @@
+.budget-row,
+.goal-row {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.budget-row .row-main,
+.goal-row .row-main {
+  display: flex;
+  flex: 1 1 10rem;
+  flex-direction: column;
+  gap: calc(var(--space) * 0.75);
+}
+
+.budget-row .row-actions,
+.goal-row .row-actions {
+  align-self: center;
+}
+
+.over-text {
+  color: var(--up);
+}
+
+.goal-note {
+  margin-top: calc(var(--space) * 2);
+}
+
+.icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

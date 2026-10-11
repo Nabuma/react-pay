@@ -1,22 +1,13 @@
-import type { ReactNode } from 'react'
-import { recipients } from '../data'
+import { useMemo, type ReactNode } from 'react'
 import { useBank } from '../hooks/useBank'
 import { useEuroTotals } from '../hooks/useEuroTotals'
 import type { DemoUser } from '../types'
 import { BankContext } from './bankContext'
 
 export function BankProvider({ children, user }: { children: ReactNode; user: DemoUser }) {
-  const bank = useBank({
-    userId: user.id,
-    accounts: user.accounts,
-    spendings: user.spendings,
-    notifications: user.notifications
-  })
+  const bank = useBank(user)
   const totals = useEuroTotals(bank.accounts, bank.spendings)
+  const value = useMemo(() => ({ ...bank, ...totals }), [bank, totals])
 
-  return (
-    <BankContext.Provider value={{ ...bank, ...totals, recipients }}>
-      {children}
-    </BankContext.Provider>
-  )
+  return <BankContext.Provider value={value}>{children}</BankContext.Provider>
 }

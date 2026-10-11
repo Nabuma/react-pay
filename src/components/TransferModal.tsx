@@ -78,7 +78,9 @@ export function TransferModal({ account, recipients, onClose, onSubmit }: Transf
           <fieldset className="transfer-recipients">
             <legend>Transfer to</legend>
             <ul className="rows">
-              {recipients.map(recipient => (
+              {[...recipients]
+                .sort((a, b) => Number(b.favourite ?? false) - Number(a.favourite ?? false))
+                .map(recipient => (
                 <li className="row" key={recipient.id}>
                   <label className="recipient-option">
                     <input

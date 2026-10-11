@@ -37,6 +37,18 @@ describe('groupMonthlySpendings', () => {
   it('returns an empty list without spendings', () => {
     expect(groupMonthlySpendings([], rates)).toEqual([])
   })
+
+  it('keeps money received out of the spending totals', () => {
+    const months = groupMonthlySpendings(
+      [...spendings, { id: 4, date: '2026-09-25', description: 'Pay', amount: 3000, currency: 'KRW', kind: 'income' as const }],
+      rates
+    )
+
+    expect(months[0].total).toBe(25)
+    expect(months[0].transactions.map(transaction => transaction.id)).toEqual([2, 3])
+    expect(months[0].income).toBe(3)
+    expect(months[0].received.map(transaction => transaction.id)).toEqual([4])
+  })
 })
 
 describe('getTrend', () => {

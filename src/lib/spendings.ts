@@ -10,9 +10,14 @@ export function groupMonthlySpendings(
   for (const spending of spendings) {
     const month = spending.date.slice(0, 7)
     const totalInEuros = toEuros(spending.amount, spending.currency, rates)
-    const monthly = months.get(month) ?? { month, total: 0, transactions: [] }
-    monthly.total += totalInEuros
-    monthly.transactions.push({ ...spending, totalInEuros })
+    const monthly = months.get(month) ?? { month, total: 0, transactions: [], income: 0, received: [] }
+    if (spending.kind === 'income') {
+      monthly.income += totalInEuros
+      monthly.received.push({ ...spending, totalInEuros })
+    } else {
+      monthly.total += totalInEuros
+      monthly.transactions.push({ ...spending, totalInEuros })
+    }
     months.set(month, monthly)
   }
 
