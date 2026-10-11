@@ -1,0 +1,110 @@
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.transfer-party {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space) * 2);
+}
+
+.transfer-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space) 0;
+  color: var(--muted);
+}
+
+.transfer-recipients {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.transfer-recipients legend {
+  margin-bottom: var(--space);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.recipient-option {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space) * 2);
+  width: 100%;
+  cursor: pointer;
+}
+
+.recipient-option input {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  accent-color: var(--brand);
+}
+
+.transfer-amount-field {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 0.75);
+  margin-top: calc(var(--space) * 3);
+}
+
+.transfer-amount-field label {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.transfer-amount-field input {
+  padding: calc(var(--space) * 1.5);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.transfer-amount-field input:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.transfer-error {
+  margin-top: var(--space);
+  color: var(--up);
+  font-size: 0.875rem;
+}
+
+.transfer-review-amount {
+  margin-top: calc(var(--space) * 3);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.transfer-review-note {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.transfer-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space);
+  text-align: center;
+}
+
+.transfer-success svg {
+  color: var(--down);
+}
+
+.transfer-success .button-primary {
+  margin-top: calc(var(--space) * 2);
+}

@@ -1,0 +1,116 @@
+.notifications {
+  position: relative;
+}
+
+.notifications .icon-button {
+  position: relative;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.45rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  background: var(--up);
+  box-sizing: content-box;
+}
+
+.popover-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.notification-panel {
+  position: absolute;
+  top: calc(100% + var(--space));
+  right: 0;
+  z-index: 11;
+  width: min(20rem, calc(100vw - 2rem));
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 12px 32px rgb(15 23 42 / 16%);
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--space) * 1.5) calc(var(--space) * 2);
+  border-bottom: 1px solid var(--border);
+}
+
+.notification-header h2 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.notification-count {
+  padding: 0 var(--space);
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.notification-list {
+  max-height: min(18rem, calc(100dvh - 8rem));
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--space) * 1.5);
+  padding: calc(var(--space) * 1.5) calc(var(--space) * 2);
+  font-size: 0.875rem;
+}
+
+.notification + .notification {
+  border-top: 1px solid var(--border);
+}
+
+.notification:hover {
+  background: var(--bg);
+}
+
+.notification-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.notification p {
+  padding-top: 0.3rem;
+}
+
+.notification-empty {
+  padding: calc(var(--space) * 3) calc(var(--space) * 2);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 46rem) {
+  .notification-panel {
+    position: fixed;
+    top: 5rem;
+    right: 1rem;
+    width: min(20rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 6rem);
+  }
+}

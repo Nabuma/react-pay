@@ -1,0 +1,68 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgb(15 23 42 / 50%);
+  animation: fade-in 0.15s ease-out;
+}
+
+.modal {
+  animation: slide-up 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 38rem);
+  max-height: 85vh;
+  border-radius: calc(var(--radius) * 1.5) calc(var(--radius) * 1.5) 0 0;
+  background: var(--surface);
+}
+
+.modal:focus {
+  outline: none;
+}
+
+@media (min-width: 640px) {
+  .modal-backdrop {
+    align-items: center;
+    padding: calc(var(--space) * 3);
+  }
+
+  .modal {
+    border-radius: calc(var(--radius) * 1.5);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--space) * 2) calc(var(--space) * 3);
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+  font-size: 1.125rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space) * 3);
+  overflow-y: auto;
+  padding: calc(var(--space) * 3);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(1.5rem);
+    opacity: 0;
+  }
+}
